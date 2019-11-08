@@ -4,7 +4,7 @@
 umask 022
 
 # Set our default path
-PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:$HOME/.config/bspwm:$HOME/.config/bspwm/panel:$HOME/.bin:/usr/lib/go/bin:$HOME/code/go/bin:$HOME/.cargo/bin"
+PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:$HOME/.config/bspwm:$HOME/.config/bspwm/panel:$HOME/.bin:/usr/lib/go/bin:$HOME/go/bin:$HOME/.cargo/bin"
 export PATH
 export XDG_CONFIG_HOME="$HOME/.config"
 export BSPWM_SOCKET="/tmp/bspwm-socket"
@@ -30,6 +30,6 @@ unset TERMCAP
 # Man is much better than us at figuring this out
 unset MANPATH
 BROWSER=/usr/bin/firefox-developer-edition
-export GOPATH=$HOME/code/go
+export GOPATH=$HOME/go
 export GOROOT=/usr/lib/go
 

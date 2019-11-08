@@ -6,10 +6,14 @@ aws configure
 yay -S google-cloud-sdk
 gcloud init
 
+# Install mercurial - need this now with go mod, can't remember why
+sudo pacman -S mercurial
+
 # make paths
 mkdir -p $GOPATH/src/github.com/planetscale
 
 # Set the release version variable
+cd /tmp
 RELEASE_VERSION=v0.10.0
 curl -OJL https://github.com/operator-framework/operator-sdk/releases/download/${RELEASE_VERSION}/operator-sdk-${RELEASE_VERSION}-x86_64-linux-gnu
 
@@ -22,10 +26,7 @@ gpg --verify operator-sdk-${RELEASE_VERSION}-x86_64-linux-gnu.asc
 sudo chmod +x operator-sdk-${RELEASE_VERSION}-x86_64-linux-gnu \
 && sudo cp operator-sdk-${RELEASE_VERSION}-x86_64-linux-gnu /usr/local/bin/operator-sdk-v0.10.0
 
-rm operator-sdk-${RELEASE_VERSION}-x86_64-linux-gnu && rm operator-sdk-${RELEASE_VERSION}-x86_64-linux-gnu.asc
-
 # Install gen-crd-api-reference-docs dep
-cd /tmp
 GO111MODULE=on go get github.com/ahmetb/gen-crd-api-reference-docs
 
 # Download the godoc server
