@@ -111,8 +111,11 @@ yay -S thunderbird
 # Install Golang, MariaDB and Vitess
 ./install-vitess-arch.sh
 
-# Install Rider IDE (C#)
-# yay --editmenu -S rider
+# Install newest kustomize
+./install-kustomize.sh
 
-# Install Unity
-# yay -S unityhub
+# Install minikube & kvm deps
+./install-minikube.sh
+
+# Install operator-2 stuff
+./install-operator2.sh
