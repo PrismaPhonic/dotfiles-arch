@@ -40,6 +40,7 @@
     ~/.xinitrc:
     ~/.lemonpanelrc:
     ~/.limepanelrc:
+    ~/.fehbg:
     /etc/profile:
       path: profile
       relink: true
