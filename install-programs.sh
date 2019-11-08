@@ -108,6 +108,9 @@ yay -S neofetch
 # Install Thunderbird
 yay -S thunderbird
 
+# Install Golang, MariaDB and Vitess
+./install-vitess-arch.sh
+
 # Install Rider IDE (C#)
 # yay --editmenu -S rider
 
