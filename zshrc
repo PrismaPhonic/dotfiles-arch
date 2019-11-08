@@ -1,3 +1,27 @@
+## Adding to paths FIRST - necessary for Ubuntu
+
+# Adding cargo path
+export PATH="$PATH:$HOME/.cargo/bin"
+
+# Add user bin path
+export PATH="$PATH:/usr/bin"
+
+# Add bin to path (ubuntu messes up and needs this i guess)
+export PATH="$PATH:/bin"
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
+# Adding here just in case?
+export PATH=$PATH:$GOROOT/bin:$HOME/code/go/bin
+
+# Add flavor of mysql for vitess
+export MYSQL_FLAVOR=MariaDB
+
+# Vitess path exports
+export VTROOT=$HOME/code/go
+export VTDATAROOT=$HOME/vtdataroot
+
 ## Options section
 setopt correct                                                  # Auto correct mistakes
 setopt extendedglob                                             # Extended globbing. Allows using regular expressions with *
@@ -198,17 +222,45 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
 # adding powerline to z-shell
-powerline-daemon -q
-. /usr/lib/python3.7/site-packages/powerline/bindings/zsh/powerline.zsh
+powerline-daemon -q 
 
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
+# Arch check powerline
+if [[ -r /usr/lib/python3.7/site-packages/powerline/bindings/zsh/powerline.zsh ]]; then
+    . /usr/lib/python3.7/site-packages/powerline/bindings/zsh/powerline.zsh
+fi
 
-# Adding cargo path
-export PATH="$PATH:$HOME/.cargo/bin"
-
-# Add user bin path
-export PATH="$PATH:/usr/bin"
+# Ubuntu check powerline
+if [[ -r /usr/share/powerline/bindings/zsh/powerline.zsh ]]; then
+    . /usr/share/powerline/bindings/zsh/powerline.zsh
+fi
 
 # This fixes a display issue with Jetbrains IDEs on Linux
 export _JAVA_AWT_WM_NONREPARENTING=1
+alias node=nodejs
+
+# For convenience
+export PSOPERATOR=$HOME/code/go/src/github.com/planetscale/planetscale-operator
+
+# for staging
+alias gcpstagctl='kubectl --kubeconfig=/home/pmfarr/.kube/gcp.staging.kubeconfig'
+alias awsstagctl='kubectl --kubeconfig=/home/pmfarr/.kube/awsstaging2.kubeconfig'
+alias pmfstagctl='kubectl --kubeconfig=/home/pmfarr/.kube/pmfarr-aws-useast1.kubeconfig'
+alias awsprodctl='kubectl --kubeconfig=/home/pmfarr/.kube/prod-aws-uswest2.kubeconfig'
+alias gcpprodctl='kubectl --kubeconfig=/home/pmfarr/.kube/prod-gcp-uscentral1.kubeconfig'
+
+[[ -s "/home/pmfarr/.gvm/scripts/gvm" ]] && source "/home/pmfarr/.gvm/scripts/gvm"
+
+source /etc/profile
+export PATH=$HOME/bin:$PATH
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/pmfarr/google-cloud-sdk/path.zsh.inc' ]; then . '/home/pmfarr/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/pmfarr/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/pmfarr/google-cloud-sdk/completion.zsh.inc'; fi
+
+# adding path for yarn global binaries
+export PATH="$(yarn global bin):$PATH"
+
+# add pycharm binary to path
+export PATH=$HOME/pycharm-2019.2.3/bin:$PATH
