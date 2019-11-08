@@ -20,7 +20,7 @@ gpg --recv-key "0CF50BEE7E4DF6445E08C0EA9AFDE59E90D2B445"
 gpg --verify operator-sdk-${RELEASE_VERSION}-x86_64-linux-gnu.asc
 
 sudo chmod +x operator-sdk-${RELEASE_VERSION}-x86_64-linux-gnu \
-&& sudo cp operator-sdk-${RELEASE_VERSION}-x86_64-linux-gnu /usr/local/bin/operator2-sdk-v0.10.0
+&& sudo cp operator-sdk-${RELEASE_VERSION}-x86_64-linux-gnu /usr/local/bin/operator-sdk-v0.10.0
 
 rm operator-sdk-${RELEASE_VERSION}-x86_64-linux-gnu && rm operator-sdk-${RELEASE_VERSION}-x86_64-linux-gnu.asc
 
