@@ -11,3 +11,6 @@ export PATH=$PATH:/usr/local/go/bin
 # Setup workspace for golang stuff
 mkdir -p ~/go/src
 mkdir -p ~/go/bin
+
+export GOPATH=~/go
+export PATH=$PATH:/$GOPATH/bin

@@ -48,7 +48,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
 # Install Yarn
-paru -S yarn
+paru -S --noconfirm --needed yarn
 
 # Install Node with NVM
 nvm install node
@@ -68,25 +68,25 @@ git config --global user.email "Peter@PrismaPhonic.com"
 sudo pip3 install --upgrade pynvim
 
 # Install Goland IDE
-paru -S goland
+paru -S --noconfirm --needed goland
 
 # Install and setup docker
-paru -S docker
+paru -S --noconfirm --needed docker
 sudo systemctl start docker
 sudo systemctl enable docker
 sudo gpasswd -a pmfarr docker
 
 # Install kubectl
-paru -S kubectl
+paru -S --noconfirm --needed kubectl
 
 # Install Slack
-paru -S slack-desktop
+paru -S --noconfirm --needed slack-desktop
 
 # Install neofetch for coolness factor
-paru -S neofetch
+paru -S --noconfirm --needed neofetch
 
 # Install Thunderbird
-paru -S thunderbird
+paru -S --noconfirm --needed thunderbird
 
 # Install Golang
 ./install-golang.sh
