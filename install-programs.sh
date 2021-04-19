@@ -62,9 +62,6 @@ npm install -g instant-markdown-d
 git config --global user.name "Peter Farr"
 git config --global user.email "Peter@PrismaPhonic.com"
 
-# Install polybar
-paru -S polybar
-
 # Install python neovim module
 sudo pip3 install --upgrade pynvim
 
