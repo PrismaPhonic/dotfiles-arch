@@ -3,6 +3,9 @@
 # Make sure system is fully up to date before adding new program
 sudo pacman --noconfirm -Syu
 
+# Install lastpass
+sudo pacman -S --noconfirm --needed lastpass-cli
+
 # Install neovim
 sudo pacman -S --noconfirm --needed neovim
 

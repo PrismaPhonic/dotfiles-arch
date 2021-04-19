@@ -1,5 +1,5 @@
 # Install packages for KVM
-sudo pacman -S qemu qemu-arch-extra libvirt bridge-utils virt-manager ebtables dnsmasq
+sudo pacman -S --noconfirm --needed qemu qemu-arch-extra libvirt bridge-utils virt-manager ebtables dnsmasq
 
 # Add user to necessary groups
 sudo usermod -a -G libvirt $(whoami)
@@ -12,7 +12,7 @@ sudo systemctl start virtlogd.service
 sudo systemctl enable virtlogd.service
 
 # Install docker-machine and kvm2 driver
-sudo pacman -S docker-machine
+sudo pacman -S --noconfirm --needed docker-machine
 paru -S docker-machine-driver-kvm2
 
 # Install minikube
