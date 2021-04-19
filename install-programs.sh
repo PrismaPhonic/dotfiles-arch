@@ -78,8 +78,8 @@ paru -S neofetch
 # Install Thunderbird
 paru -S thunderbird
 
-# Install Golang, Percona and Vitess
-./install-vitess-arch.sh
+# Install Golang & Percona
+./install-mysql.sh
 
 # Install newest kustomize
 ./install-kustomize.sh
