@@ -3,7 +3,7 @@ sudo pacman -S --noconfirm --needed aws-cli
 aws configure
 
 # Install gcloud sdk (includes cli)
-paru -S google-cloud-sdk
+paru -S --noconfirm --needed google-cloud-sdk
 gcloud init
 
 # Install mercurial - need this now with go mod, can't remember why

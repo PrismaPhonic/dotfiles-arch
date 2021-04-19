@@ -3,6 +3,10 @@
 # Make sure system is fully up to date before adding new program
 sudo pacman --noconfirm -Syu
 
+# Install paru
+git clone https://aur.archlinux.org/paru.gi ~/.srcs/paru
+(cd ~/.srcs/paru/ && makepkg -si)
+
 # Install lastpass
 sudo pacman -S --noconfirm --needed lastpass-cli
 
@@ -23,6 +27,7 @@ sudo pacman -R rust
 
 # Install rust
 curl https://sh.rustup.rs -sSf | sh
+source $HOME/.cargo/env
 
 # Install nightly rust
 rustup install nightly
@@ -51,9 +56,6 @@ nvm use node
 
 # Install neovim npm module globally
 npm install -g neovim
-
-# Install paru
-sudo pacman -S --noconfirm --needed paru
 
 # Install instant markdown mini-server
 npm install -g instant-markdown-d
