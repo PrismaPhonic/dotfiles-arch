@@ -1,10 +1,13 @@
 #!/bin/sh
 
+# Make sure system is fully up to date before adding new program
+sudo pacman --noconfirm -Syu
+
 # Install neovim
-sudo pacman -Sy neovim
+sudo pacman -S --noconfirm --needed neovim
 
 # Install pip
-sudo pacman -Sy python-pip
+sudo pacman -S --noconfirm --needed python-pip
 
 # Install python neovim module
 sudo pip3 install --upgrade pynvim
@@ -39,7 +42,7 @@ nvm use node
 npm install -g neovim
 
 # Install paru
-sudo pacman -Sy paru
+sudo pacman -S --noconfirm --needed paru
 
 # Install instant markdown mini-server
 npm install -g instant-markdown-d
@@ -78,7 +81,10 @@ paru -S neofetch
 # Install Thunderbird
 paru -S thunderbird
 
-# Install Golang & Percona
+# Install Golang
+./install-golang.sh
+
+# Install Percona server and client tools
 ./install-mysql.sh
 
 # Install newest kustomize
