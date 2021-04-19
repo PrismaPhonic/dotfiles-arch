@@ -91,7 +91,7 @@ paru -S --noconfirm --needed thunderbird
 # Install Golang
 ./install-golang.sh
 
-# Install Percona server and client tools
+# Install mysql server and client tools
 ./install-mysql.sh
 
 # Install newest kustomize
