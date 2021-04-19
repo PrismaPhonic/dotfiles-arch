@@ -1,20 +1,17 @@
 # Install aws cli
-sudo pacman -Sy aws-cli
+sudo pacman -S --noconfirm --needed aws-cli
 aws configure
 
 # Install gcloud sdk (includes cli)
-yay -S google-cloud-sdk
+paru -S google-cloud-sdk
 gcloud init
 
 # Install mercurial - need this now with go mod, can't remember why
-sudo pacman -S mercurial
-
-# make paths
-mkdir -p $GOPATH/src/github.com/planetscale
+sudo pacman -S --noconfirm --needed mercurial
 
 # Set the release version variable
 cd /tmp
-RELEASE_VERSION=v0.10.0
+RELEASE_VERSION=v1.6.1
 curl -OJL https://github.com/operator-framework/operator-sdk/releases/download/${RELEASE_VERSION}/operator-sdk-${RELEASE_VERSION}-x86_64-linux-gnu
 
 # Verify the download release binary
@@ -31,13 +28,3 @@ GO111MODULE=on go get github.com/ahmetb/gen-crd-api-reference-docs
 
 # Download the godoc server
 go get golang.org/x/tools/cmd/godoc
-
-# Clone mono-repo
-cd $GOPATH/src/github.com/planetscale/
-git clone git@github.com:planetscale/planetscale-operator.git
-
-# Configure docker to use minikube daemon before we build
-eval $(minikube docker-env)
-
-# Build operator2
-cd planetscale-operator2 && make build 
