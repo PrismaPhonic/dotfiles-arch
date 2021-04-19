@@ -82,6 +82,12 @@ paru -S --noconfirm --needed kubectl
 # Install Slack
 paru -S --noconfirm --needed slack-desktop
 
+# Install Signal messenger
+paru -S --noconfirm --needed signal-desktop
+
+# Install Discord
+sudo pacman -S --noconfirm --needed discord
+
 # Install neofetch for coolness factor
 paru -S --noconfirm --needed neofetch
 
