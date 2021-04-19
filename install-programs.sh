@@ -18,6 +18,9 @@ sudo pip3 install --upgrade pynvim
 # Setup vim-plug
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
+# Un-install previous Rust that may have been installed using manjaro community repo
+sudo pacman -R rust
+
 # Install rust
 curl https://sh.rustup.rs -sSf | sh
 
@@ -33,6 +36,11 @@ cargo install ripgrep
 # Install NVM
 mkdir ~/.nvm
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
+
+# Load NVM immediately into this term session.
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
 # Install Yarn
 paru -S yarn
@@ -56,9 +64,6 @@ git config --global user.email "Peter@PrismaPhonic.com"
 
 # Install polybar
 paru -S polybar
-
-# Install powerline
-paru -S powerline
 
 # Install python neovim module
 sudo pip3 install --upgrade pynvim
